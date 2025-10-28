@@ -405,3 +405,1024 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "password_digest", "created_at", "updated_at") VALUES ('rails@gmail.com', '$2a$12$vKEH/3PCL9.k06Xo1kfrtus0iMzWcLVr4NtQOzqpf9lrJwZanDSCS', '2025-10-27 08:47:07.206419', '2025-10-27 08:47:07.206419') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "password_digest", "created_at", "updated_at") VALUES ('fortestingqwe@gmail.com', '$2a$12$zXmd43BQEK.QFnUiCLfZ0eNlagh5iyNS5YYk8VI1jEE/yj8p5fjfq', '2025-10-27 09:00:41.647887', '2025-10-27 09:00:41.647887') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "password_digest", "created_at", "updated_at") VALUES ('fortestingqwe@gmail.com', '$2a$12$INX5xKwNz7VgryQmK3owWep1V6HNsVA0t/1wtOMpBo.bQS9krks5i', '2025-10-27 09:03:29.482080', '2025-10-27 09:03:29.482080') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Store'*/[0m
+Started GET "/" for ::1 at 2025-10-27 14:34:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+Redirected to http://[::1]:3000/session/new
+Filter chain halted as :require_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:34:51 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:35:18 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b7061a700>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'fortestingqwa@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Redirected to http://[::1]:3000/session/new
+Completed 302 Found in 195ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b704e4890>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'forlocaltesting@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Started POST "/session" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b704a9380>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'forlocaltesting@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Started POST "/session" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b7046de98>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'forlocaltesting@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Redirected to http://[::1]:3000/session/new
+Completed 302 Found in 203ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b7043f700>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'forlocaltesting@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Redirected to http://[::1]:3000/session/new
+Completed 302 Found in 203ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b70411a58>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'forlocaltesting@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Redirected to http://[::1]:3000/session/new
+Completed 302 Found in 204ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b703d3ac8>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'forlocaltesting@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Redirected to http://[::1]:3000/session/new
+Completed 302 Found in 202ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 36.0ms)
+
+
+Redirected to http://[::1]:3000/session/new
+Completed 302 Found in 202ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 36.0ms)
+
+
+Redirected to http://[::1]:3000/session/new
+Completed 302 Found in 207ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 36.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:35:19 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.6ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:36:11 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b7070c140>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'fortestingqwe@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mSession Create (0.7ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "ip_address", "user_agent", "created_at", "updated_at") VALUES (3, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', '2025-10-27 09:06:11.998708', '2025-10-27 09:06:11.998708') RETURNING "id" /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+Redirected to http://[::1]:3000/
+Completed 302 Found in 206ms (ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/" for ::1 at 2025-10-27 14:36:12 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b706ab228>)
+Caused by: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b706ab228>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b706ab228>):
+    1: <h1>Products</h1>
+    2: 
+    3: <%= link_to "New product", new_product_path %>
+    4: 
+    5: <div id="products">
+    6:   <% @products.each do |product| %>
+  
+app/views/products/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b706ab228>):
+  
+app/views/products/index.html.erb:3
+Started GET "/products/new" for ::1 at 2025-10-27 14:36:54 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products/new"):
+  
+Started GET "/products/new" for ::1 at 2025-10-27 14:36:58 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products/new"):
+  
+Started GET "/rails/info/routes?query=for" for ::1 at 2025-10-27 14:37:03 +0530
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query" => "for"}
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/rails/info/routes?query=forts" for ::1 at 2025-10-27 14:37:04 +0530
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query" => "forts"}
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/info/routes?query=for" for ::1 at 2025-10-27 14:37:06 +0530
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query" => "for"}
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/rails/info/routes?query=fortesr" for ::1 at 2025-10-27 14:37:08 +0530
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query" => "fortesr"}
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/rails/info/routes?query=fortesting" for ::1 at 2025-10-27 14:37:09 +0530
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query" => "fortesting"}
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2025-10-27 14:38:20 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products/new"):
+  
+Started GET "/" for ::1 at 2025-10-27 14:40:48 +0530
+Processing by ProductsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:40:48 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:49:54 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:49:55 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 2.7ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:49:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:49:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:49:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-10-27 14:50:04 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>)
+Caused by: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>):
+    1: <h1>Products</h1>
+    2: 
+    3: <%= link_to "New product", new_product_path %>
+    4: 
+    5: <div id="products">
+    6:   <% @products.each do |product| %>
+  
+app/views/products/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>):
+  
+app/views/products/index.html.erb:3
+Started GET "/session/new" for ::1 at 2025-10-27 14:50:32 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:50:33 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:50:33 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:50:33 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:50:48 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:51:31 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b73290280>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'fortestingqwa@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 192ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:51:31 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:52:03 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b7012b9b0>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'fortestingqwa@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 190ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:52:03 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-10-27 14:52:10 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 1 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>)
+Caused by: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>):
+    1: <h1>Products</h1>
+    2: 
+    3: <%= link_to "New product", new_product_path %>
+    4: 
+    5: <div id="products">
+    6:   <% @products.each do |product| %>
+  
+app/views/products/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b7081faa0>):
+  
+app/views/products/index.html.erb:3
+Started GET "/" for ::1 at 2025-10-27 14:53:05 +0530
+Processing by ProductsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:53:05 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.7ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/products/new" for ::1 at 2025-10-27 14:56:07 +0530
+Processing by ProductsController#new as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 14:56:07 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 14:57:05 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b70197138>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'fortestingqwe@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mSession Create (0.7ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "ip_address", "user_agent", "created_at", "updated_at") VALUES (3, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', '2025-10-27 09:27:05.935542', '2025-10-27 09:27:05.935542') RETURNING "id" /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+Redirected to http://localhost:3000/products/new
+Completed 302 Found in 196ms (ActiveRecord: 5.8ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/products/new" for ::1 at 2025-10-27 14:57:05 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.9ms | GC: 0.6ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.6ms)
+Completed 200 OK in 13ms (Views: 5.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/products" for ::1 at 2025-10-27 14:57:36 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"name" => "Laptop"}, "commit" => "Create Product"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='create',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:17:in 'ProductsController#create'
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Laptop', '2025-10-27 09:27:36.746894', '2025-10-27 09:27:36.746894') RETURNING "id" /*action='create',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:17:in 'ProductsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:17:in 'ProductsController#create'
+Redirected to 
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+  
+NoMethodError (undefined method 'product_url' for an instance of ProductsController):
+  
+app/controllers/products_controller.rb:18:in 'ProductsController#create'
+Started GET "/products/new" for ::1 at 2025-10-27 15:00:22 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 2.8ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/products/new" for ::1 at 2025-10-27 15:00:24 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/products/new" for ::1 at 2025-10-27 15:00:24 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.7ms | GC: 0.8ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.8ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.8ms)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/products/new" for ::1 at 2025-10-27 15:00:24 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2025-10-27 15:00:24 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-10-27 15:00:26 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>)
+Caused by: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>):
+    1: <h1>Products</h1>
+    2: 
+    3: <%= link_to "New product", new_product_path %>
+    4: 
+    5: <div id="products">
+    6:   <% @products.each do |product| %>
+  
+app/views/products/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>):
+  
+app/views/products/index.html.erb:3
+Started GET "/session/new" for ::1 at 2025-10-27 15:00:34 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 2 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/session" for ::1 at 2025-10-27 15:00:56 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007b5b7066aac0>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'fortestingqwe@gmail.com' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mSession Create (0.7ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "ip_address", "user_agent", "created_at", "updated_at") VALUES (3, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', '2025-10-27 09:30:56.648176', '2025-10-27 09:30:56.648176') RETURNING "id" /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms (ActiveRecord: 6.5ms (2 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/" for ::1 at 2025-10-27 15:00:56 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>)
+Caused by: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>):
+    1: <h1>Products</h1>
+    2: 
+    3: <%= link_to "New product", new_product_path %>
+    4: 
+    5: <div id="products">
+    6:   <% @products.each do |product| %>
+  
+app/views/products/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>):
+  
+app/views/products/index.html.erb:3
+Started GET "/passwords/new" for ::1 at 2025-10-27 15:01:13 +0530
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='passwords'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/passwords" for ::1 at 2025-10-27 15:01:33 +0530
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "commit" => "Email reset instructions"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'fortestingqwe@gmail.com' LIMIT 1 /*action='create',application='Store',controller='passwords'*/[0m
+  ↳ app/controllers/passwords_controller.rb:9:in 'PasswordsController#create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1) to Async(default) with arguments: "PasswordsMailer", "reset", "deliver_now", {args: [#<GlobalID:0x00007b5b70584f48 @uri=#<URI::GID gid://store/User/3>>]}
+[ActiveJob] ↳ app/controllers/passwords_controller.rb:10:in 'PasswordsController#create'
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 37ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 4.0ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Store'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1] Performing ActionMailer::MailDeliveryJob (Job ID: a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1) from Async(default) enqueued at 2025-10-27T09:31:33.650984363Z with arguments: "PasswordsMailer", "reset", "deliver_now", {args: [#<GlobalID:0x00007b5b704ddd38 @uri=#<URI::GID gid://store/User/3>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendering passwords_mailer/reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendered passwords_mailer/reset.html.erb within layouts/mailer (Duration: 0.6ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendered layout layouts/mailer.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendering passwords_mailer/reset.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendered passwords_mailer/reset.text.erb within layouts/mailer (Duration: 1.1ms | GC: 0.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1]   Rendered layout layouts/mailer.text.erb (Duration: 1.3ms | GC: 0.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1] PasswordsMailer#reset: processed outbound mail in 11.0ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1] Delivered mail 68ff3bf5a4953_d1974d7850f7@c3p4.mail (21.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1] Date: Mon, 27 Oct 2025 15:01:33 +0530
+From: from@example.com
+To: fortestingqwe@gmail.com
+Message-ID: <68ff3bf5a4953_d1974d7850f7@c3p4.mail>
+Subject: Reset your password
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_68ff3bf5a39ed_d1974d784972";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_68ff3bf5a39ed_d1974d784972
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You can reset your password within the next 15 minutes on this password reset page:
+http://localhost:3000/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzMsIkZuVWlDTGZaMGUiXSwiZXhwIjoiMjAyNS0xMC0yN1QwOTo0NjozMy42NjZaIiwicHVyIjoiVXNlclxucGFzc3dvcmRfcmVzZXRcbjkwMCJ9fQ==--863ad08fa17285dc7d578e5b0725fb07fcd75e4f/edit
+
+
+----==_mimepart_68ff3bf5a39ed_d1974d784972
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/passwords_mailer/reset.html.erb --><p>
+  You can reset your password within the next 15 minutes on
+  <a href="http://localhost:3000/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzMsIkZuVWlDTGZaMGUiXSwiZXhwIjoiMjAyNS0xMC0yN1QwOTo0NjozMy42NjRaIiwicHVyIjoiVXNlclxucGFzc3dvcmRfcmVzZXRcbjkwMCJ9fQ==--7ab3d271b62800e10c05afe7cf3985499e962455/edit">this password reset page</a>.
+</p>
+<!-- END app/views/passwords_mailer/reset.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->
+----==_mimepart_68ff3bf5a39ed_d1974d784972--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1] Performed ActionMailer::MailDeliveryJob (Job ID: a6a2b4c4-914c-4e4a-b0ac-bdcca8684ec1) from Async(default) in 37.61ms
+Started GET "/session/new" for ::1 at 2025-10-27 15:01:33 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-10-27 15:02:37 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>)
+Caused by: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>):
+    1: <h1>Products</h1>
+    2: 
+    3: <%= link_to "New product", new_product_path %>
+    4: 
+    5: <div id="products">
+    6:   <% @products.each do |product| %>
+  
+app/views/products/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'new_product_path' for an instance of #<Class:0x00007b5b700587b8>):
+  
+app/views/products/index.html.erb:3
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:00 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.3ms)
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:09 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:10 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 1.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 1.0ms)
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:10 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 1.1ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 1.9ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:10 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | GC: 1.1ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 1.7ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:10 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 1.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 2.0ms)
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:11 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.4ms | GC: 1.5ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 2.3ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:11 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.9ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 1.5ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:11 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 1.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 1.3ms)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:11 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | GC: 1.2ms)
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 1.7ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:14 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | GC: 1.2ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 1.3ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:15 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | GC: 1.5ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 1.5ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:15 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.5ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:15 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:12:19 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:28 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:28 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:29 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:29 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:29 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:29 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:29 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2025-10-27 15:18:30 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 3 LIMIT 1 /*action='new',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
