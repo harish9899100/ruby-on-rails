@@ -1,6 +1,9 @@
 class User < ApplicationRecord
-  has_secure_password
-  has_many :sessions, dependent: :destroy
+  after_create :log_new_user
 
-  normalizes :email_address, with: ->(e) { e.strip.downcase }
+  private
+
+  def log_new_user
+    puts 'A new user was registered'
+  end
 end
