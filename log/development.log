@@ -1577,3 +1577,100 @@ Migrating to Publications (20251028073144)
   [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251028073144') RETURNING "version" /*application='Store'*/[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Reverting Publications (20251028073144)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20251028073144' /*application='Store'*/[0m
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Reverting CreateBookOrders (20251028060653)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "book_orders" /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20251028060653' /*application='Store'*/[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+Reverting CreateBooks (20251028055548)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "books" /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20251028055548' /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+Reverting CreateUsers (20251026033918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mDROP INDEX "index_users_on_email_address" /*application='Store'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users" /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20251026033918' /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Migrating to CreateUsers (20251026033918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email_address" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Store'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email_address" ON "users" ("email_address") /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251026033918') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+Migrating to CreateBooks (20251028055548)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "my_books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251028055548') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+Migrating to CreateBookOrders (20251028060653)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "book_orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251028060653') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+Migrating to Publications (20251028073144)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251028073144') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (1.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ('The Lord of the Rings', 'J.R.R. Tolkien', '2025-10-29 07:57:49.367419', '2025-10-29 07:57:49.367419') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "my_books" ("title", "author", "created_at", "updated_at") VALUES ('The Lord of the Rings', 'J.R.R. Tolkien', '2025-10-29 07:59:27.436501', '2025-10-29 07:59:27.436501') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "my_books" ("title", "author", "created_at", "updated_at") VALUES ('The Hobbit', 'J.R.R. Tolkien', '2025-10-29 08:03:42.310363', '2025-10-29 08:03:42.310363') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "my_books" ("title", "author", "created_at", "updated_at") VALUES ('Paolo Perrotta', NULL, '2025-10-29 08:05:03.222379', '2025-10-29 08:05:03.222379') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Insert (0.3ms)[0m  [1m[32mINSERT INTO "my_books" ("title","author","created_at","updated_at") VALUES ('The Lord of the Rings', 'J.R.R. Tolkien', STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW'), STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW')) ON CONFLICT  DO NOTHING RETURNING "id" /*application='Store'*/[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" /* loading for pp */ LIMIT 11 /*application='Store'*/[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" ORDER BY "my_books"."id" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" LIMIT 1 /*application='Store'*/[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."title" = 'Metaprogramming Ruby 2' LIMIT 1 /*application='Store'*/[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."id" = 2 LIMIT 1 /*application='Store'*/[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."author" = 'Douglas Adams' /* loading for pp */ ORDER BY "my_books"."created_at" DESC LIMIT 11 /*application='Store'*/[0m
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."title" = 'The Lord of the Rings' LIMIT 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "my_books" SET "title" = 'The Lord of the Rings: The Fellowship of the Ring', "updated_at" = '2025-10-29 08:29:43.449478' WHERE "my_books"."id" = 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Update All (0.6ms)[0m  [1m[33mUPDATE "my_books" SET "status" = 'already own' /*application='Store'*/[0m
+  [1m[36mBook Update All (0.4ms)[0m  [1m[33mUPDATE "my_books" SET "status" = 'already own' /*application='Store'*/[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."title" = 'The Lord of the Rings' LIMIT 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Destroy (1.6ms)[0m  [1m[31mDELETE FROM "my_books" WHERE "my_books"."id" = 4 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."author" = 'Douglas Adams' /*application='Store'*/[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "my_books" WHERE "my_books"."id" = 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "my_books" WHERE "my_books"."id" = 2 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "my_books" WHERE "my_books"."id" = 3 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."title" = 'The Lord of the Rings' LIMIT 1 /*application='Store'*/[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."title" = 'The Lord of the Rings' LIMIT 1 /*application='Store'*/[0m
