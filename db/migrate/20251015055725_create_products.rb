@@ -1,23 +1,9 @@
-class CreatePublications < ActiveRecord::Migration[8.1]
+class CreateProducts < ActiveRecord::Migration[8.1]
   def change
-    create_table :publications do |t|
-      t.string :title
-      t.text :description
-      t.references :publication_type
-      t.references :publisher, polymorphic: true
-      t.boolean :single_issue
-
-      t.timestamps
+    create_table :products, options: 'ENGINE=BLACKHOLE' do |t|
+      t.string :name, null: false
+      t.references :category
+      t.belongs_to :category
     end
   end
 end
-
-# class CreateProducts < ActiveRecord::Migration[8.0]
-#   def change
-#     create_table :products do |t|
-#       t.string :name
-
-#       t.timestamps
-#     end
-#   end
-# end
