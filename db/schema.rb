@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_28_073144) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_30_074012) do
   create_table "book_orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,6 +27,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_28_073144) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "price", precision: 5, scale: 2
+    t.string "supplier_type"
+    t.integer "supplier_id"
+    t.integer "user_id", null: false
+    t.index ["supplier_type", "supplier_id"], name: "index_products_on_supplier"
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "products_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "product_id", null: false
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -43,8 +54,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_28_073144) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "emil", null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "products", "users"
   add_foreign_key "sessions", "users"
 end
