@@ -1674,3 +1674,18 @@ Migrating to Publications (20251028073144)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
   [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."title" = 'The Lord of the Rings' LIMIT 1 /*application='Store'*/[0m
   [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "my_books".* FROM "my_books" WHERE "my_books"."title" = 'The Lord of the Rings' LIMIT 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (1.3ms)[0m  [1m[32mINSERT INTO "my_books" ("title", "author", "created_at", "updated_at") VALUES (' mybooks', NULL, '2025-10-29 09:48:04.357714', '2025-10-29 09:48:04.357714') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "my_books" ("title", "author", "created_at", "updated_at") VALUES (' mybooks', NULL, '2025-10-29 09:51:18.852767', '2025-10-29 09:51:18.852767') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "my_books" ("title", "author", "created_at", "updated_at") VALUES ('mybooks', NULL, '2025-10-29 09:51:33.940367', '2025-10-29 09:51:33.940367') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "my_books" ("title", "author", "created_at", "updated_at") VALUES ('mybooks', NULL, '2025-10-29 09:53:01.901973', '2025-10-29 09:53:01.901973') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
