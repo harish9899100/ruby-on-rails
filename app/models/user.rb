@@ -1,18 +1,23 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  before_validation :titleize_name
-  after_validation :log_errors
+  before_create :set_default_role
+  around_create :log_creation
+  after_create :send_welcome_email
 
   private
 
-  def titleize_name
-    self.name = name.downcase.titleize if name.present?
-    Rails.logger.info("Name titleized to #{name}")
+  def set_default_role
+    self.role = 'user'
+    Rails.logger.info('User role set to default: user')
   end
 
-  def log_errors
-    return unless errors.any?
+  def log_creation
+    Rails.logger.info("Creating user with email: #{email}")
+    yield
+    Rails.logger.info("User created with email: #{email}")
+  end
 
-    Rails.logger.error("Validation failed: #{errors.full_messages.join(', ')}")
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_later
+    Rails.logger.info("User welcome email sent to: #{email}")
   end
 end
