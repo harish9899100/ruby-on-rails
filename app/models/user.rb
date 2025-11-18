@@ -1,23 +1,39 @@
 class User < ApplicationRecord
-  before_create :set_default_role
-  around_create :log_creation
-  after_create :send_welcome_email
+  after_touch do |user|
+    Rails.logger.info('You have touched an object')
+  end
+
+  after_initialize do |user|
+    Rails.logger.info('You have initialized an object!')
+  end
+
+  after_find do |user|
+    Rails.logger.info('You have found an object!')
+  end
+
+  before_destroy :check_admin_count
+  around_destroy :log_destroy_operation
+  after_destroy :notify_users
 
   private
 
-  def set_default_role
-    self.role = 'user'
-    Rails.logger.info('User role set to default: user')
+  def admin?
+    role == 'admin'
   end
 
-  def log_creation
-    Rails.logger.info("Creating user with email: #{email}")
+  def check_admin_count
+    throw :abort if admin? && User.where(role: 'admin').count == 1
+    Rails.logger.info('Checked the admin count')
+  end
+
+  def log_destroy_operation
+    Rails.logger.info("About to destroy user with ID #{id}")
     yield
-    Rails.logger.info("User created with email: #{email}")
+    Rails.logger.info("User with ID #{id} destroyed successfully")
   end
 
-  def send_welcome_email
-    UserMailer.welcome_email(self).deliver_later
-    Rails.logger.info("User welcome email sent to: #{email}")
+  def notify_users
+    UserMailer.deletion_email(email: email, name: name).deliver_later
+    Rails.logger.info('Notification sent to other users about user deletion')
   end
 end
