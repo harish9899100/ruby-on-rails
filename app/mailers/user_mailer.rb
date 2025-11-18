@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-  def welcome_email(user)
-    @user = user
+  def deletion_email(email:, name:)
+    @name = name
     mail(
-      to: @user.email,
-      subject: 'Welcome to the app!'
+      to: 'admin@example.com',
+      subject: 'User deleted'
     )
   end
 end
