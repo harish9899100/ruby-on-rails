@@ -1,4 +1,14 @@
 class User < ApplicationRecord
+  before_save :log_email_change
+
+  private
+
+  def log_email_change
+    return unless email_changed?
+
+    Rails.logger.info("Email change from #{email_was} to #{email}")
+  end
+
   after_touch do |user|
     Rails.logger.info('You have touched an object')
   end
