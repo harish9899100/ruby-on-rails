@@ -10,18 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_19_072128) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_20_102731) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.bigint "supplier_id"
+    t.string "account_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_accounts_on_supplier_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "authors", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +51,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_19_072128) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "library_id", null: false
+    t.bigint "author_id"
+    t.datetime "published_at"
+    t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["library_id"], name: "index_books_on_library_id"
   end
 
@@ -108,6 +120,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_19_072128) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
+  create_table "suppliers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -118,6 +136,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_19_072128) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "books", "authors"
   add_foreign_key "books", "libraries"
   add_foreign_key "notifications", "articles"
   add_foreign_key "notifications", "users"
